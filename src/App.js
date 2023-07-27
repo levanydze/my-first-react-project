@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./RR.css";
+import React from "react";
+// import { useState, useEffect } from "react";
+import styled from "styled-components";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Product from "./components/Product";
+import Checkout from "./components/Checkout";
+import Home from "./components/Home";
+import Menu from "./components/menu/Menu";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Nav></Nav>
+        <NAVUNDER></NAVUNDER>
+        <Routes>
+          <Route index path="/product" element={<Product />}></Route>
+          <Route path="/menu" element={<Menu />}></Route>
+          <Route path="/home" element={<Home />}></Route>
+          <Route path="/checkout" element={<Checkout />}></Route>
+        </Routes>
+        <Footer></Footer>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+const NAVUNDER = styled.div`
+  height: 4rem;
+  width: 100%;
+`;
