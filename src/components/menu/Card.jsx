@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-
 import img from "../../images/khinkali.jpeg";
+import { useContext } from "react";
+import CardContext from "./menu--categories/CardContext";
 
 const Card = ({ cardKey, name, category, price, description, image }) => {
+  const { addToCart } = useContext(CardContext);
+
   return (
     <CARD>
       <IMGBOX>
@@ -18,7 +21,7 @@ const Card = ({ cardKey, name, category, price, description, image }) => {
           <PRICE>
             <p>{price ? price : "10$"} $</p>
           </PRICE>
-          <ADD>
+          <ADD onClick={() => addToCart(name, price, image, cardKey)}>
             <p>Add</p>
           </ADD>
         </PRICEDIV>
@@ -103,6 +106,7 @@ const PRICE = styled.div`
 `;
 
 const ADD = styled.div`
+  cursor: pointer;
   width: 50%;
   background-color: #0c6d26;
   display: flex;

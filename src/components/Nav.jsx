@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import React from "react";
 import { Link } from "react-router-dom";
+import CardContext from "./menu/menu--categories/CardContext";
+import { useContext } from "react";
 
 const Nav = () => {
+  const { items } = useContext(CardContext);
   return (
     <div>
       <DIVWRAPNAV>
@@ -13,6 +16,7 @@ const Nav = () => {
           <Link to="/checkout">CHECKOUT</Link>
         </DIVNAVL>
         <DIVNAVR>
+          <span>G = {items.length}</span>
           <button>Log In</button>
         </DIVNAVR>
       </DIVWRAPNAV>
@@ -55,6 +59,8 @@ const DIVNAVR = styled.div`
   flex-direction: row-reverse;
   width: 30%;
   margin-right: 10%;
+  color: var(--light);
+
   button {
     width: 6rem;
     height: 2rem;
