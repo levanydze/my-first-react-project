@@ -3,22 +3,23 @@ import styled from "styled-components";
 
 import img from "../../images/khinkali.jpeg";
 
-const Card = ({ key, name, category, price, description, image }) => {
+const Card = ({ cardKey, name, category, price, description, image }) => {
   return (
     <CARD>
       <IMGBOX>
-        <img src={image} alt="" />
+        <img src={image ? image : img} alt="123" />
       </IMGBOX>
       <TEXTBOX>
-        <h2>{name}</h2>
-        <p>{}</p>
+        {/* <h2>{name ? name : "Georgian Dumpling"}</h2> */}
+        <p>{description ? "THIS IS FETCHED DATA by spoonacular" : ""}</p>
+        <span>{!description ? "THIS IS LOCAL DATA" : ""} </span>
 
         <PRICEDIV>
           <PRICE>
-            <p>{price}$</p>
+            <p>{price ? price : "10$"} $</p>
           </PRICE>
           <ADD>
-            <p>HH</p>
+            <p>Add</p>
           </ADD>
         </PRICEDIV>
       </TEXTBOX>
@@ -55,12 +56,18 @@ const TEXTBOX = styled.div`
   height: 40%;
   width: 100%;
   position: relative;
+  span {
+    color: green;
+    font-size: 20px;
+  }
   p {
-    font-size: 15px;
+    font-size: 20px;
     margin: 10px;
     margin-bottom: 5px;
+    color: red;
   }
   h2 {
+    color: var(--light);
     font-size: 18px;
     margin: 5px 0px 0px 5px;
   }
@@ -84,12 +91,14 @@ const PRICEDIV = styled.div`
 
 const PRICE = styled.div`
   width: 50%;
+
   background-color: #09361c;
   display: flex;
   align-items: center;
   p {
     margin: 0 auto;
-    font-size: 20px;
+    font-size: 18px;
+    color: var(--light);
   }
 `;
 
@@ -100,6 +109,7 @@ const ADD = styled.div`
   align-items: center;
   p {
     margin: 0 auto;
+    color: var(--light);
     font-size: 25px;
   }
 `;

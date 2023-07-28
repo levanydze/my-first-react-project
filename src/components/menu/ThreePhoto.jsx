@@ -8,7 +8,7 @@ const ThreePhoto = () => {
   return (
     <THREEPHOTO>
       <EACHPHOTO>
-        <img src={image1} alt="image" />
+        <img src={image1} alt="123" />
         <div></div>
         <TEXTBOX>
           <h3>Lunch Menu</h3>
@@ -17,7 +17,7 @@ const ThreePhoto = () => {
         </TEXTBOX>
       </EACHPHOTO>
       <EACHPHOTO>
-        <img src={image2} alt="image" />
+        <img src={image2} alt="345" />
         <div></div>
 
         <TEXTBOX>
@@ -27,7 +27,7 @@ const ThreePhoto = () => {
         </TEXTBOX>
       </EACHPHOTO>
       <EACHPHOTO>
-        <img src={image3} alt="image" />
+        <img src={image3} alt="2123" />
         <div></div>
 
         <TEXTBOX>

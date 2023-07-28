@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Card from "./Card";
-import { useState, useEffect } from "react";
-import FooodMenu from "./FooodMenu";
+import FooodMenu from "./menu--categories/FooodMenu";
+import Vegetarian from "./menu--categories/Vegetarian";
+import Drink from "./menu--categories/Drink";
 
 const MenuList = () => {
-  const [listBtn, setListBtn] = useState(true);
+  const [activeCategory, setActiveCategory] = useState(null);
 
-  const listHandlerBtn = () => {
-    setListBtn(!listBtn);
+  const listHandlerBtn = (categoryIndex) => {
+    setActiveCategory((prevActive) =>
+      prevActive === categoryIndex ? null : categoryIndex
+    );
   };
 
   return (
@@ -16,18 +19,35 @@ const MenuList = () => {
       <h3>M E N U</h3>
       <EACHCATEGORY>
         <CATNAME>
-          MAIN DISHES <button onClick={listHandlerBtn}>+</button>
+          Main Food
+          <button onClick={() => listHandlerBtn(0)}>
+            {activeCategory === 0 ? "-" : "+"}
+          </button>
         </CATNAME>
-        <CARDLIST className={listBtn ? "active" : ""}>
+        <CARDLIST className={activeCategory === 0 ? "active" : ""}>
           <FooodMenu></FooodMenu>
         </CARDLIST>
       </EACHCATEGORY>
       <EACHCATEGORY>
         <CATNAME>
-          MAIN DISHES <button onClick={listHandlerBtn}>+</button>
+          Vegetarian
+          <button onClick={() => listHandlerBtn(1)}>
+            {activeCategory === 1 ? "-" : "+"}
+          </button>
         </CATNAME>
-        <CARDLIST className={listBtn ? "active" : ""}>
-          <FooodMenu></FooodMenu>
+        <CARDLIST className={activeCategory === 1 ? "active" : ""}>
+          <Vegetarian></Vegetarian>
+        </CARDLIST>
+      </EACHCATEGORY>
+      <EACHCATEGORY>
+        <CATNAME>
+          Drink
+          <button onClick={() => listHandlerBtn(2)}>
+            {activeCategory === 2 ? "-" : "+"}
+          </button>
+        </CATNAME>
+        <CARDLIST className={activeCategory === 2 ? "active" : ""}>
+          <Drink></Drink>
         </CARDLIST>
       </EACHCATEGORY>
     </MENULIST>
@@ -69,16 +89,21 @@ const CATNAME = styled.div`
     color: var(--light);
     font-size: 20px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+    transform: ${({ isOpen }) => (isOpen ? "rotate(45deg)" : "rotate(0)")};
   }
 `;
+
 const CARDLIST = styled.div`
   width: 100%;
   height: 100%;
-
   overflow: hidden;
   display: none;
+  opacity: 0;
+
   &.active {
-    display: flex;
     overflow: visible;
+    display: flex;
+    opacity: 1;
   }
 `;
