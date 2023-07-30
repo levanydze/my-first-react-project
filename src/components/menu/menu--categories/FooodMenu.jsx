@@ -25,6 +25,8 @@ function FooodMenu() {
 
   return (
     <FMDIV>
+      <Card image={img} price={"10"} name={"xinkali"}></Card>
+      <Card image={img} price={"10"} name={"xinkali"}></Card>
       {foodMenu.map((food) => (
         <Card
           key={food.id}
@@ -37,6 +39,7 @@ function FooodMenu() {
       <Card image={img} price={"10"} name={"xinkali"}></Card>
       <Card image={img} price={"15"} name={"moxinklo"}></Card>
       <Card image={img} price={"16"} name={"waxingklo"}></Card>
+      <Card image={img} price={"10"} name={"xinkali"}></Card>
       <Card image={img} price={"17"} name={"wamoxinklo"}></Card>
       <Card image={img} price={"18"} name={"gadaxinklo"}></Card>
       <Card image={img} price={"19"} name={"gadmoxinklo"}></Card>

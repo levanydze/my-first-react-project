@@ -5,6 +5,7 @@ import CardContext from "./menu--categories/CardContext";
 
 const Checkout = () => {
   const { items } = useContext(CardContext);
+  const totalToPay = items.reduce((total, item) => total + item.price, 0);
   return (
     <DIVWRAPPER>
       <DIVCART>
@@ -22,6 +23,9 @@ const Checkout = () => {
       </DIVCART>
       <DIVCHECKOUT>
         <h4> Total: {items.length} Items in cart</h4>
+        <h3>
+          <h3> Total Amount: {totalToPay} $</h3>
+        </h3>
       </DIVCHECKOUT>
     </DIVWRAPPER>
   );
@@ -39,7 +43,7 @@ const DIVCART = styled.div`
   width: 70%;
   display: flex;
   flex-direction: column;
-
+  min-height: 50vh;
   padding: 10px;
 `;
 const DIVRETURN = styled.div`
@@ -78,13 +82,19 @@ const DIVCHECKOUT = styled.div`
   position: fixed;
   right: 0;
   margin-top: 1rem;
-
   background-color: var(--light);
   width: 30%;
   margin-right: 1rem;
   border-radius: 1rem;
   height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   h4 {
     margin-top: 1rem;
+  }
+  h3 {
+    border-top: 1px solid var(--dark);
+    line-height: 5rem;
   }
 `;

@@ -5,22 +5,22 @@ import { styled } from "styled-components";
 function Drink() {
   const [foodMenu, setFoodMenu] = useState([]);
 
-  // useEffect(() => {
-  //   getFoodMenu();
-  // }, []);
+  useEffect(() => {
+    getFoodMenu();
+  }, []);
 
-  // const getFoodMenu = async () => {
-  //   try {
-  //     const apiKey = process.env.REACT_APP_API_KEY2; // Use the correct environment variable name for your API key
-  //     const response = await fetch(
-  //       `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=3` // Fetch 6 random recipes
-  //     );
-  //     const data = await response.json();
-  //     setFoodMenu(data.recipes);
-  //   } catch (error) {
-  //     console.error("Error fetching food menu:", error);
-  //   }
-  // };
+  const getFoodMenu = async () => {
+    try {
+      const apiKey = process.env.REACT_APP_API_KEY2; // Use the correct environment variable name for your API key
+      const response = await fetch(
+        `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=3` // Fetch 6 random recipes
+      );
+      const data = await response.json();
+      setFoodMenu(data.recipes);
+    } catch (error) {
+      console.error("Error fetching food menu:", error);
+    }
+  };
 
   return (
     <FMDIV>

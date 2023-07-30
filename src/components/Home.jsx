@@ -1,10 +1,10 @@
 import React from "react";
+import HoursMap from "./home/HoursMap.jsx";
 
 const Home = () => {
   return (
     <div>
-      Home
-      <h1> radebr araubedurebaa</h1>;
+      <HoursMap></HoursMap>
     </div>
   );
 };

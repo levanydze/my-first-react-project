@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import Card from "./Card";
+import Card from "./Card123";
 const Product = () => {
   return (
     <div className="product-page">

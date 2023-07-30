@@ -10,10 +10,18 @@ const Nav = () => {
     <div>
       <DIVWRAPNAV>
         <DIVNAVL>
-          <Link to="/home">HOME</Link>
-          <Link to="/product">PRODUCT</Link>
-          <Link to="/menu">MENU</Link>
-          <Link to="/checkout">CHECKOUT</Link>
+          <Link to="/home">
+            <p>HOME</p>
+          </Link>
+          <Link to="/product">
+            <p>PRODUCT</p>
+          </Link>
+          <Link to="/menu">
+            <p>MENU</p>
+          </Link>
+          <Link to="/checkout">
+            <p>CHECKOUT</p>
+          </Link>
         </DIVNAVL>
         <DIVNAVR>
           <span>G = {items.length}</span>
@@ -47,9 +55,14 @@ const DIVNAVL = styled.div`
   padding: 0rem 1rem;
   color: var(--light);
 
+  p:hover {
+    color: var(--medium);
+  }
+
   p {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 25px;
+    transition: 0.5s;
   }
 `;
 
