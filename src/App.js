@@ -20,7 +20,7 @@ function App() {
           <Nav></Nav>
           <NAVUNDER></NAVUNDER>
           <Routes>
-            <Route index path="/product" element={<Product />}></Route>
+            <Route index path="/" element={<Menu />}></Route>
             <Route path="/menu" element={<Menu />}></Route>
             <Route path="/home" element={<Home />}></Route>
             <Route path="/checkout" element={<Checkout />}></Route>

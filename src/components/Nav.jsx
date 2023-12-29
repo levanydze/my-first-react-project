@@ -10,7 +10,7 @@ const Nav = () => {
     <div>
       <DIVWRAPNAV>
         <DIVNAVL>
-          <Link to="/home">
+          <Link to="/">
             <p>HOME</p>
           </Link>
 
