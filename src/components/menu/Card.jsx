@@ -19,7 +19,7 @@ const Card = ({ cardKey, name, category, price, description, image }) => {
 
         <PRICEDIV>
           <PRICE>
-            <p>{price ? price : "10$"} $</p>
+            <p>{price ? price : 10} $</p>
           </PRICE>
           <ADD onClick={() => addToCart(name, price, image, cardKey)}>
             <p>Add</p>

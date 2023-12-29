@@ -15,23 +15,7 @@ const Product = () => {
 
 export default Product;
 
-const items = [
-  { id: 1, name: "მაისური", price: 50 },
-  { id: 2, name: "შარვალი", price: 10 },
-  { id: 3, name: "ტრუსიკი", price: 150 },
-  { id: 4, name: "შორტი", price: 250 },
-  { id: 5, name: "დაკიდერავი", price: 350 },
-  { id: 6, name: "მაისური", price: 50 },
-  { id: 7, name: "შარვალი", price: 10 },
-  { id: 8, name: "ტრუსიკი", price: 150 },
-  { id: 9, name: "შორტი", price: 250 },
-  { id: 10, name: "დაკიდერავი", price: 350 },
-  { id: 11, name: "მაისური", price: 50 },
-  { id: 12, name: "შარვალი", price: 10 },
-  { id: 13, name: "ტრუსიკი", price: 150 },
-  { id: 14, name: "შორტი", price: 250 },
-  { id: 15, name: "დაკიდერავი", price: 350 },
-];
+const items = [];
 
 const PROWRAP = styled.div`
   padding-top: 3rem;
