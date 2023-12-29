@@ -5,7 +5,10 @@ import CardContext from "./menu--categories/CardContext";
 
 const Checkout = () => {
   const { items } = useContext(CardContext);
-  const totalToPay = items.reduce((total, item) => total + item.price, 0);
+  const totalToPay = items.reduce(
+    (total, item) => total + Number(item.price),
+    0
+  );
   return (
     <DIVWRAPPER>
       <DIVCART>
